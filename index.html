@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Rewire Your Brain for Success — The Sharp Mind Blueprint</title>
+<meta name="description" content="A 30-day neuroscience-backed protocol for Nigerian entrepreneurs who are working hard — but whose brains are quietly working against them."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#080808;--deep:#0d0d0d;--surface:#141414;--card:#1a1a1a;
+  --border:#232323;--muted:#303030;--dim:#505050;--sub:#808070;
+  --text:#e0d8cc;--white:#f5f0e6;--red:#c0392b;--red2:#a93226;--gold:#c9a84c;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'DM Mono',monospace;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.032'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.45;
+}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}.reveal-d2{transition-delay:.2s;}.reveal-d3{transition-delay:.35s;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:800;background:rgba(8,8,8,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.18em;color:var(--white);}
+.nav-brand em{color:var(--red);font-style:normal;}
+
+/* CTA BUTTON */
+.btn{display:inline-flex;align-items:center;gap:.9rem;padding:1rem 2.2rem;background:var(--red);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.2em;border:none;cursor:pointer;transition:all .2s ease;position:relative;overflow:hidden;white-space:nowrap;}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.08);transform:translateX(-100%);transition:transform .3s ease;}
+.btn:hover{background:var(--red2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(192,57,43,.35);}
+.btn:hover::after{transform:translateX(0);}
+.btn-arrow{display:inline-block;transition:transform .2s ease;}
+.btn:hover .btn-arrow{transform:translateX(5px);}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:58px;display:grid;grid-template-columns:1fr 400px;border-bottom:1px solid var(--border);}
+.hero-left{padding:5rem 4rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.hero-left::after{content:'BRAIN';position:absolute;bottom:-2rem;left:-1rem;font-family:'Bebas Neue',sans-serif;font-size:18rem;line-height:1;color:var(--border);opacity:.3;pointer-events:none;letter-spacing:.05em;white-space:nowrap;}
+.hero-eyebrow{font-size:.58rem;letter-spacing:.5em;color:var(--red);text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:.9rem;animation:fadeDown .8s ease both;}
+.hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--red);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,7.5vw,7.5rem);line-height:.9;letter-spacing:.02em;color:var(--white);margin-bottom:1.5rem;position:relative;z-index:2;animation:fadeUp .9s ease .1s both;}
+.hero-title .accent{color:var(--red);}
+.hero-title .strapline{display:block;font-size:clamp(1.1rem,2vw,1.8rem);color:var(--sub);font-family:'Fraunces',serif;font-style:italic;font-weight:300;margin-top:.4rem;}
+.hero-desc{font-size:.75rem;line-height:2;color:var(--sub);max-width:480px;margin-bottom:3rem;border-left:2px solid var(--red);padding-left:1.2rem;position:relative;z-index:2;animation:fadeUp .9s ease .25s both;}
+.hero-cta-group{display:flex;flex-direction:column;gap:.8rem;position:relative;z-index:2;animation:fadeUp .9s ease .35s both;}
+.hero-cta-note{font-size:.58rem;color:var(--dim);letter-spacing:.15em;}
+.hero-cta-note span{color:var(--gold);}
+.hero-right{background:var(--deep);padding:3.5rem 2rem;display:flex;flex-direction:column;gap:1.5rem;animation:fadeUp .9s ease .2s both;}
+.price-box{background:var(--surface);border:1px solid var(--border);padding:2rem;}
+.price-tag-label{font-size:.55rem;letter-spacing:.4em;color:var(--dim);text-transform:uppercase;margin-bottom:.8rem;}
+.price-amount{font-family:'Bebas Neue',sans-serif;font-size:3.8rem;color:var(--white);line-height:1;}
+.price-amount sub{font-size:1.1rem;color:var(--sub);vertical-align:middle;}
+.price-range{font-size:.62rem;color:var(--sub);margin-top:.4rem;letter-spacing:.1em;}
+.what-you-get{background:var(--card);border:1px solid var(--border);padding:1.5rem;}
+.wg-title{font-size:.55rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.wg-item{display:flex;align-items:flex-start;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.66rem;color:var(--sub);line-height:1.6;}
+.wg-item:last-child{border:none;}
+.wg-check{color:var(--red);flex-shrink:0;font-size:.75rem;margin-top:1px;}
+.guarantee-box{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.2rem 1.4rem;font-size:.63rem;color:var(--sub);line-height:1.8;}
+.guarantee-box strong{color:var(--gold);display:block;font-size:.65rem;letter-spacing:.12em;margin-bottom:.3rem;}
+
+/* TICKER */
+.ticker{background:var(--red);overflow:hidden;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,.3);}
+.ticker-track{display:flex;gap:4rem;animation:ticker 22s linear infinite;width:max-content;}
+.ticker-item{font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:.25em;color:#fff;white-space:nowrap;display:flex;align-items:center;gap:1.5rem;}
+.ticker-item::before{content:'✦';font-size:.5rem;opacity:.6;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SHARED SECTION */
+.container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
+.section-eyebrow{font-size:.56rem;letter-spacing:.45em;color:var(--red);text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem;}
+.section-eyebrow::before{content:'';width:22px;height:1px;background:var(--red);}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5vw,4.5rem);letter-spacing:.04em;color:var(--white);line-height:.95;margin-bottom:1.2rem;}
+.section-sub{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--sub);max-width:580px;line-height:1.7;margin-bottom:3.5rem;}
+
+/* PAIN */
+.pain-section{padding:7rem 0;border-bottom:1px solid var(--border);background:var(--deep);}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.pain-card{background:var(--deep);padding:2rem;}
+.pain-icon{font-size:1.4rem;margin-bottom:1rem;}
+.pain-q{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.7rem;line-height:1.4;}
+.pain-body{font-size:.68rem;color:var(--sub);line-height:1.9;}
+.pain-truth{margin-top:3rem;padding:2.5rem;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--red);font-family:'Fraunces',serif;font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.7;}
+
+/* INSIDE */
+.inside-section{padding:7rem 0;border-bottom:1px solid var(--border);}
+.inside-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:2rem;}
+.inside-card{background:var(--deep);padding:2.5rem;position:relative;overflow:hidden;transition:background .25s ease;}
+.inside-card:hover{background:var(--surface);}
+.inside-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+.inside-card:hover::before{transform:scaleX(1);}
+.ic-part{font-size:.54rem;letter-spacing:.35em;color:var(--red);text-transform:uppercase;margin-bottom:.7rem;}
+.ic-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:.8rem;}
+.ic-desc{font-size:.68rem;color:var(--sub);line-height:1.9;margin-bottom:1rem;}
+.ic-items{display:flex;flex-direction:column;gap:.35rem;}
+.ic-item{font-size:.62rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5;}
+.ic-item::before{content:'→';color:var(--red);flex-shrink:0;}
+.ic-ghost{position:absolute;bottom:-1.5rem;right:.8rem;font-family:'Bebas Neue',sans-serif;font-size:7rem;color:var(--muted);opacity:.07;line-height:1;pointer-events:none;}
+.bonus-strip{background:var(--surface);border:1px solid var(--border);padding:2rem 2.5rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+.bonus-badge{background:var(--red);font-family:'Bebas Neue',sans-serif;font-size:.75rem;letter-spacing:.2em;padding:.4rem .9rem;color:#fff;flex-shrink:0;}
+.bonus-text{font-size:.7rem;color:var(--sub);line-height:1.8;flex:1;}
+.bonus-text strong{color:var(--white);}
+
+/* DOPAMINE */
+.dop-section{padding:7rem 0;border-bottom:1px solid var(--border);background:var(--deep);}
+.dop-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.dop-body-text{font-size:.72rem;color:var(--sub);line-height:2;margin-bottom:1.5rem;}
+.dop-callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.2rem 1.5rem;font-size:.68rem;color:var(--sub);line-height:1.9;}
+.dop-callout strong{color:var(--gold);}
+.dop-chart{display:flex;flex-direction:column;gap:.75rem;}
+.dop-row{display:flex;align-items:center;gap:.9rem;}
+.dop-name{font-size:.58rem;color:var(--sub);width:155px;flex-shrink:0;text-align:right;}
+.dop-bar-wrap{flex:1;height:6px;background:var(--muted);overflow:hidden;}
+.dop-fill{height:100%;width:0;transition:width 1.8s cubic-bezier(.25,1,.5,1);}
+.dop-fill.harm{background:var(--red);}
+.dop-fill.good{background:var(--gold);}
+.dop-divider{font-size:.52rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;text-align:center;display:flex;align-items:center;gap:.8rem;margin:.3rem 0;}
+.dop-divider::before,.dop-divider::after{content:'';flex:1;height:1px;background:var(--muted);}
+
+/* PROTOCOL */
+.protocol-section{padding:7rem 0;border-bottom:1px solid var(--border);}
+.weeks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:3rem;}
+.week-card{background:var(--deep);padding:2rem;}
+.week-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--muted);line-height:1;margin-bottom:.4rem;}
+.week-label{font-size:.54rem;letter-spacing:.3em;color:var(--red);text-transform:uppercase;margin-bottom:.5rem;}
+.week-title{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.6rem;}
+.week-desc{font-size:.64rem;color:var(--sub);line-height:1.8;}
+.week-tasks{margin-top:1rem;display:flex;flex-direction:column;gap:.3rem;}
+.week-task{font-size:.6rem;color:var(--dim);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.week-task::before{content:'▸';color:var(--red);flex-shrink:0;}
+.mid-cta{background:var(--surface);border:1px solid var(--border);padding:3rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.mid-cta-copy h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
+.mid-cta-copy p{font-size:.7rem;color:var(--sub);line-height:1.8;max-width:480px;}
+
+/* TESTIMONIALS */
+.social-section{padding:7rem 0;border-bottom:1px solid var(--border);background:var(--deep);}
+.quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem;}
+.quote-card{background:var(--card);border:1px solid var(--border);padding:2rem;position:relative;}
+.quote-card::before{content:'"';font-family:'Fraunces',serif;font-size:5.5rem;color:var(--red);opacity:.12;position:absolute;top:-1rem;left:1rem;line-height:1;pointer-events:none;}
+.quote-body{font-family:'Fraunces',serif;font-style:italic;font-size:.82rem;color:var(--text);line-height:1.75;margin-bottom:1.2rem;position:relative;z-index:1;}
+.quote-author{font-size:.58rem;color:var(--sub);letter-spacing:.15em;text-transform:uppercase;}
+.quote-author span{color:var(--gold);display:block;margin-top:.2rem;}
+.testimonial-note{margin-top:1.5rem;padding:1rem 1.5rem;border:1px dashed var(--muted);font-size:.6rem;color:var(--dim);letter-spacing:.1em;line-height:1.8;text-align:center;}
+
+/* FAQ */
+.faq-section{padding:7rem 0;border-bottom:1px solid var(--border);}
+.faq-list{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);}
+.faq-item{background:var(--deep);border-bottom:1px solid var(--border);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{width:100%;background:none;border:none;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;text-align:left;transition:background .2s ease;}
+.faq-q:hover{background:var(--surface);}
+.faq-q-text{font-family:'Fraunces',serif;font-weight:700;font-size:.9rem;color:var(--white);line-height:1.4;}
+.faq-icon{color:var(--red);font-size:1.4rem;flex-shrink:0;transition:transform .25s ease;font-family:'DM Mono',monospace;font-weight:300;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 2rem 1.5rem;font-size:.7rem;color:var(--sub);line-height:1.9;max-width:700px;}
+.faq-item.open .faq-a{display:block;}
+
+/* FINAL CTA */
+.final-cta{padding:8rem 0;background:var(--black);text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'SUCCESS';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:22vw;color:var(--border);opacity:.15;pointer-events:none;white-space:nowrap;letter-spacing:.05em;}
+.final-cta .container{position:relative;z-index:2;}
+.final-eyebrow{font-size:.56rem;letter-spacing:.5em;color:var(--red);text-transform:uppercase;margin-bottom:2rem;display:inline-flex;align-items:center;gap:.8rem;}
+.final-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.93;letter-spacing:.03em;color:var(--white);margin-bottom:1.5rem;}
+.final-title .accent{color:var(--red);}
+.final-sub{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--sub);max-width:520px;margin:0 auto 3rem;line-height:1.7;}
+.final-cta-group{display:flex;flex-direction:column;align-items:center;gap:.8rem;}
+.final-note{font-size:.58rem;color:var(--dim);letter-spacing:.15em;}
+.final-note span{color:var(--gold);}
+
+/* FOOTER */
+footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.2em;color:var(--dim);}
+.footer-copy{font-size:.58rem;color:var(--dim);letter-spacing:.12em;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .hero-left{padding:3.5rem 1.5rem 4rem;}
+  .hero-left::after{font-size:9rem;}
+  .pain-grid,.inside-grid,.quotes-grid{grid-template-columns:1fr;}
+  .dop-inner{grid-template-columns:1fr;gap:3rem;}
+  .weeks-grid{grid-template-columns:1fr 1fr;}
+  .mid-cta{flex-direction:column;align-items:flex-start;}
+  .container{padding:0 1.5rem;}
+  .section-title{font-size:2.5rem;}
+  .final-title{font-size:3rem;}
+}
+@media(max-width:500px){.weeks-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">Sharp<em>Mind</em> Blueprint</div>
+  <!-- =====================================================
+       SELAR LINK #1 OF 5 — replace #SELAR_LINK_HERE
+       See instructions at bottom of this file
+  ===================================================== -->
+  <a class="btn" href="#SELAR_LINK_HERE" target="_blank" rel="noopener">
+    Get The Blueprint <span class="btn-arrow">→</span>
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">The Sharp Mind Blueprint · For Nigerian Hustlers</div>
+    <h1 class="hero-title">
+      HOW TO<br>REWIRE YOUR<br>BRAIN FOR<br><span class="accent">SUCCESS</span>
+      <span class="strapline">The 30-Day Mental Performance Protocol</span>
+    </h1>
+    <p class="hero-desc">
+      You are already working hard. The problem is not your effort — it is your brain.
+      Doomscrolling, poor sleep, addiction loops, and chronic stress are silently destroying
+      your focus, discipline, and decision-making. This blueprint shows you exactly how to
+      stop the damage and rewire your brain for the level you are trying to reach.
+    </p>
+    <div class="hero-cta-group">
+      <!-- SELAR LINK #2 OF 5 -->
+      <a class="btn" href="#SELAR_LINK_HERE" target="_blank" rel="noopener">
+        Get Instant Access <span class="btn-arrow">→</span>
+      </a>
+      <p class="hero-cta-note">Instant download · PDF + Interactive Edition · <span>One-time payment</span></p>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="price-box">
+      <div class="price-tag-label">Investment</div>
+      <!-- UPDATE PRICE HERE if needed -->
+      <div class="price-amount">₦<sub></sub>10,000</div>
+      <div class="price-range">One-time · Instant access forever</div>
+    </div>
+    <div class="what-you-get">
+      <div class="wg-title">What You Get</div>
+      <div class="wg-item"><span class="wg-check">✦</span><span><strong style="color:var(--text)">The Sharp Mind Blueprint PDF</strong><br>55-page premium ebook — full protocol, science, workbook</span></div>
+      <div class="wg-item"><span class="wg-check">✦</span><span><strong style="color:var(--text)">Interactive Digital Edition</strong><br>30-day tracker, dopamine audit tool, digital workbook</span></div>
+      <div class="wg-item"><span class="wg-check">✦</span><span><strong style="color:var(--text)">The Sharp Mind Daily System</strong><br>Permanent operating protocol for peak cognitive performance</span></div>
+      <div class="wg-item"><span class="wg-check">✦</span><span><strong style="color:var(--text)">Lifetime Access</strong><br>Download once, use forever. No subscription.</span></div>
+    </div>
+    <div class="guarantee-box">
+      <strong>💡 Why This Works</strong>
+      Every intervention is backed by peer-reviewed neuroscience. This is not motivation content — it is a behavioral protocol with a precise mechanism for each action.
+    </div>
+    <!-- SELAR LINK #3 OF 5 -->
+    <a class="btn" href="#SELAR_LINK_HERE" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+      Buy Now — Instant Access <span class="btn-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<!-- PAIN -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-eyebrow reveal">Sound Familiar?</div>
+    <h2 class="section-title reveal reveal-d1">YOUR BRAIN IS<br>WORKING AGAINST YOU</h2>
+    <p class="section-sub reveal reveal-d2">Most entrepreneurs blame discipline. They should be blaming neuroscience. Here is what is actually happening inside your head right now.</p>
+    <div class="pain-grid reveal reveal-d2">
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <div class="pain-q">You open your phone to check one thing and lose 2 hours.</div>
+        <div class="pain-body">Doomscrolling has physically weakened your prefrontal cortex — the part of your brain responsible for focus, planning, and impulse control. You are not undisciplined. You are neurologically hijacked.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔋</div>
+        <div class="pain-q">You know what you need to do — but something keeps pulling you back.</div>
+        <div class="pain-body">That pull is a depleted dopamine system. Artificial stimulation has crashed your baseline. Motivation, discipline, and delayed gratification all require dopamine — and yours is running low.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🌫️</div>
+        <div class="pain-q">You feel foggy, reactive, and like you are not thinking clearly.</div>
+        <div class="pain-body">Chronic stress, poor sleep, and poor diet are causing neuroinflammation and hippocampal damage. Brain fog is a physical symptom — not a mindset problem. And it is fully reversible.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😴</div>
+        <div class="pain-q">You sleep less to work more, but your work keeps getting worse.</div>
+        <div class="pain-body">Sleep deprivation is the most expensive productivity mistake a hustler makes. Missing even one night reduces cognitive performance equivalent to being legally drunk — and you do not know how impaired you are.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📚</div>
+        <div class="pain-q">You consume content constantly but cannot seem to apply anything.</div>
+        <div class="pain-body">Passive consumption builds recognition without retention. Your brain only forms durable pathways through active creation. You have trained a passive brain — this blueprint trains an active one.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔁</div>
+        <div class="pain-q">You start with energy and abandon it when things get hard.</div>
+        <div class="pain-body">This is not a character flaw. It is what a hijacked dopamine system does — makes the beginning exciting and the middle unbearable. The protocol fixes the neurochemistry, not just the habit.</div>
+      </div>
+    </div>
+    <div class="pain-truth reveal">"The sharpest people in any room are not the most naturally gifted. They are the ones who protect their cognitive resources most deliberately. Intelligence is not fixed. Clarity is not inherited. Focus is not a personality trait. These are outputs of a well-maintained brain — and you now have the manual."</div>
+  </div>
+</section>
+
+<!-- INSIDE -->
+<section class="inside-section">
+  <div class="container">
+    <div class="section-eyebrow reveal">What Is Inside</div>
+    <h2 class="section-title reveal reveal-d1">THE COMPLETE BLUEPRINT</h2>
+    <p class="section-sub reveal reveal-d2">Four parts. One mission: build the brain your ambitions actually require.</p>
+    <div class="inside-grid reveal">
+      <div class="inside-card">
+        <div class="ic-part">Part One</div>
+        <div class="ic-title">The 7 Brain Killers</div>
+        <div class="ic-desc">Full neuroscience diagnosis of the seven everyday behaviors destroying your cognitive performance — with the specific brain regions affected by each.</div>
+        <div class="ic-items">
+          <div class="ic-item">Doomscrolling & short-form content addiction</div>
+          <div class="ic-item">Chronic sleep deprivation</div>
+          <div class="ic-item">Dopamine hijacking & addiction loops</div>
+          <div class="ic-item">Chronic stress & worry loops</div>
+          <div class="ic-item">Sedentary lifestyle & BDNF depletion</div>
+          <div class="ic-item">Poor diet & the gut-brain connection</div>
+          <div class="ic-item">Passive consumption without output</div>
+        </div>
+        <div class="ic-ghost">01</div>
+      </div>
+      <div class="inside-card">
+        <div class="ic-part">Part Two</div>
+        <div class="ic-title">The Neuroscience</div>
+        <div class="ic-desc">How dopamine, cortisol, BDNF, and the prefrontal cortex actually work — explained in plain language for builders, not scientists.</div>
+        <div class="ic-items">
+          <div class="ic-item">The Prefrontal Cortex — your CEO brain</div>
+          <div class="ic-item">Dopamine — the motivation molecule explained</div>
+          <div class="ic-item">Neuroplasticity — the rewiring mechanism</div>
+          <div class="ic-item">The Amygdala — your threat detector</div>
+          <div class="ic-item">The Dopamine Impact Map — crash vs. sustaining</div>
+        </div>
+        <div class="ic-ghost">02</div>
+      </div>
+      <div class="inside-card">
+        <div class="ic-part">Part Three</div>
+        <div class="ic-title">The 30-Day Protocol</div>
+        <div class="ic-desc">Week-by-week behavioral interventions based on neuroscience research. Each action has a precise mechanism and a specific purpose.</div>
+        <div class="ic-items">
+          <div class="ic-item">Week 1: Foundation — establish the biological base</div>
+          <div class="ic-item">Week 2: Dopamine Reset — reclaim your reward system</div>
+          <div class="ic-item">Week 3: Cognitive Construction — build thinking infrastructure</div>
+          <div class="ic-item">Week 4: Systems Integration — lock in the architecture</div>
+        </div>
+        <div class="ic-ghost">03</div>
+      </div>
+      <div class="inside-card">
+        <div class="ic-part">Part Four</div>
+        <div class="ic-title">The Sharp Mind System</div>
+        <div class="ic-desc">Your permanent operating manual after Day 30 — the daily stack, weekly audit, and emergency reset protocol that maintains peak performance indefinitely.</div>
+        <div class="ic-items">
+          <div class="ic-item">The full Daily Stack — time-blocked brain optimization</div>
+          <div class="ic-item">The Weekly Audit — 5 questions that compound growth</div>
+          <div class="ic-item">The 24-Hour Emergency Reset protocol</div>
+          <div class="ic-item">The Workbook — Day 1, weekly, and Day 30 assessments</div>
+        </div>
+        <div class="ic-ghost">04</div>
+      </div>
+    </div>
+    <div class="bonus-strip reveal">
+      <div class="bonus-badge">BUNDLE BONUS</div>
+      <div class="bonus-text"><strong>Interactive Digital Edition included:</strong> The full blueprint in a premium browser-based format — with a live 30-day progress tracker, a personal dopamine audit tool, an interactive daily system, and a digital workbook where your answers save automatically to your device.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOPAMINE -->
+<section class="dop-section">
+  <div class="container">
+    <div class="dop-inner">
+      <div class="dop-copy">
+        <div class="section-eyebrow reveal">The Core Problem</div>
+        <h2 class="section-title reveal reveal-d1">YOUR DOPAMINE<br>IS BROKEN</h2>
+        <p class="dop-body-text reveal reveal-d2">Dopamine is not a pleasure chemical — it is a motivation and drive molecule. When your system is calibrated correctly, you feel pulled toward meaningful work. Challenges feel exciting. Discipline feels natural.</p>
+        <p class="dop-body-text reveal reveal-d2">When it is hijacked by artificial stimulation, your brain downregulates its own receptors to compensate. Your baseline crashes. Normal life feels flat and unrewarding. That is not laziness. It is neurochemistry — and it is the root cause of most productivity failures.</p>
+        <div class="dop-callout reveal reveal-d3"><strong>The path out:</strong> Remove high artificial spikes → allow the baseline to recover over 2–4 weeks → reintroduce natural, sustaining sources. On the other side of that window is a brain that can focus, feel genuine motivation, and build with consistency.</div>
+      </div>
+      <div class="dop-chart reveal reveal-d2" id="dopChart"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOL -->
+<section class="protocol-section">
+  <div class="container">
+    <div class="section-eyebrow reveal">The Protocol</div>
+    <h2 class="section-title reveal reveal-d1">30 DAYS. FOUR PHASES.</h2>
+    <p class="section-sub reveal reveal-d2">Each week builds on the last. The order follows the sequence in which your brain can actually change.</p>
+    <div class="weeks-grid reveal">
+      <div class="week-card">
+        <div class="week-num">01</div>
+        <div class="week-label">Days 1–7</div>
+        <div class="week-title">Foundation</div>
+        <div class="week-desc">Establish the biological non-negotiables without which no other rewiring is possible.</div>
+        <div class="week-tasks">
+          <div class="week-task">7.5–9 hours sleep nightly</div>
+          <div class="week-task">25 mins cardio daily</div>
+          <div class="week-task">No social media before 10am</div>
+          <div class="week-task">5-min morning journal ritual</div>
+        </div>
+      </div>
+      <div class="week-card">
+        <div class="week-num">02</div>
+        <div class="week-label">Days 8–14</div>
+        <div class="week-title">Dopamine Reset</div>
+        <div class="week-desc">Reclaim your reward system. The hardest and most transformative week of the protocol.</div>
+        <div class="week-tasks">
+          <div class="week-task">Social media capped at 30 mins/day</div>
+          <div class="week-task">Daily 20-min boredom window</div>
+          <div class="week-task">10-min meditation begins</div>
+          <div class="week-task">Cold shower finish daily</div>
+        </div>
+      </div>
+      <div class="week-card">
+        <div class="week-num">03</div>
+        <div class="week-label">Days 15–21</div>
+        <div class="week-title">Cognitive Construction</div>
+        <div class="week-desc">Build the thinking infrastructure that separates people who grow from those who repeat.</div>
+        <div class="week-tasks">
+          <div class="week-task">90-min deep work blocks daily</div>
+          <div class="week-task">Active learning — write to apply</div>
+          <div class="week-task">Weekly Sunday reflection ritual</div>
+          <div class="week-task">2.5L water daily minimum</div>
+        </div>
+      </div>
+      <div class="week-card">
+        <div class="week-num">04</div>
+        <div class="week-label">Days 22–30</div>
+        <div class="week-title">Systems Integration</div>
+        <div class="week-desc">Consolidate everything into a sustainable architecture you can run permanently.</div>
+        <div class="week-tasks">
+          <div class="week-task">Design environment for good habits</div>
+          <div class="week-task">Audit and prune all information inputs</div>
+          <div class="week-task">Lock in your morning protocol</div>
+          <div class="week-task">Set your 90-day targets</div>
+        </div>
+      </div>
+    </div>
+    <div class="mid-cta reveal">
+      <div class="mid-cta-copy">
+        <h3>Ready to start the protocol?</h3>
+        <p>The 30-day tracker in the Interactive Edition lets you check off each day and task as you go — with live progress tracking so you can see the protocol working in real time.</p>
+      </div>
+      <!-- SELAR LINK #4 OF 5 -->
+      <a class="btn" href="#SELAR_LINK_HERE" target="_blank" rel="noopener">
+        Get The Blueprint <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="social-section">
+  <div class="container">
+    <div class="section-eyebrow reveal">Results</div>
+    <h2 class="section-title reveal reveal-d1">WHAT PEOPLE ARE SAYING</h2>
+    <div class="quotes-grid reveal reveal-d2">
+      <div class="quote-card">
+        <div class="quote-body">"Two weeks in and my screen time dropped by half without even trying. The dopamine explanation clicked something that no motivational content ever did."</div>
+        <div class="quote-author">Chukwuemeka A. <span>Lagos · Digital Entrepreneur</span></div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-body">"I thought I had an attention problem. Turns out I had a dopamine calibration problem. Week 2 was brutal but by Day 20 I was doing 2-hour deep work sessions consistently."</div>
+        <div class="quote-author">Femi O. <span>Abuja · Freelance Designer</span></div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-body">"The interactive edition made the difference. Checking off each day turned the protocol into a daily ritual. By Day 30 I had a streak I was genuinely proud to protect."</div>
+        <div class="quote-author">Adaeze N. <span>Port Harcourt · Business Owner</span></div>
+      </div>
+    </div>
+    <div class="testimonial-note">📝 Replace these with real customer reviews after launch. Collect them via a Google Form sent to buyers through Selar's email feature.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-eyebrow reveal">Questions</div>
+    <h2 class="section-title reveal reveal-d1">FREQUENTLY ASKED</h2>
+    <div class="faq-list reveal reveal-d2" id="faqList"></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-eyebrow reveal">The Decision</div>
+    <h2 class="final-title reveal reveal-d1">YOUR BRAIN IS EITHER<br>WORKING FOR YOU<br>OR <span class="accent">AGAINST YOU</span></h2>
+    <p class="final-sub reveal reveal-d2">There is no neutral. Every day you spend doomscrolling, undersleeping, and running on depleted dopamine is a day you are building the wrong brain. The protocol takes 30 days. The returns compound for years.</p>
+    <div class="final-cta-group reveal reveal-d3">
+      <!-- SELAR LINK #5 OF 5 -->
+      <a class="btn" href="#SELAR_LINK_HERE" target="_blank" rel="noopener" style="padding:1.3rem 3rem;font-size:1.15rem;">
+        Get The Sharp Mind Blueprint <span class="btn-arrow">→</span>
+      </a>
+      <p class="final-note">PDF + Interactive Edition · Instant download · <span>One-time payment</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Sharp Mind Blueprint</div>
+  <div class="footer-copy">© 2025 · All Rights Reserved · Built for Nigerian Builders</div>
+</footer>
+
+<script>
+/* TICKER */
+const words=['Focus','Discipline','Neuroplasticity','Dopamine Reset','Clear Thinking','30-Day Protocol','Sharp Mind','Peak Performance','Brain Rewiring','Mental Edge'];
+const track=document.getElementById('tickerTrack');
+let th='';[...words,...words].forEach(w=>{th+=`<div class="ticker-item">${w}</div>`;});
+track.innerHTML=th;
+
+/* DOPAMINE CHART */
+const dH=[{n:'Substances / Drugs',v:98},{n:'Social Media (heavy use)',v:88},{n:'Gambling',v:80},{n:'Junk Food / Sugar',v:70},{n:'Pornography',v:74}];
+const dG=[{n:'Cold Exposure',v:60},{n:'Creative Output',v:54},{n:'Vigorous Exercise',v:52},{n:'Deep Work Win',v:46},{n:'Meditation',v:34}];
+const dc=document.getElementById('dopChart');
+let dch='';
+dH.forEach(d=>{dch+=`<div class="dop-row"><div class="dop-name">${d.n}</div><div class="dop-bar-wrap"><div class="dop-fill harm" data-w="${d.v}"></div></div></div>`;});
+dch+=`<div class="dop-divider">Crash Pattern above · Sustaining below</div>`;
+dG.forEach(d=>{dch+=`<div class="dop-row"><div class="dop-name">${d.n}</div><div class="dop-bar-wrap"><div class="dop-fill good" data-w="${d.v}"></div></div></div>`;});
+dc.innerHTML=dch;
+
+/* FAQ */
+const faqs=[
+  {q:'Who is this blueprint for?',a:'Designed specifically for young Nigerian entrepreneurs, freelancers, and builders who are already motivated and working hard — but experiencing broken focus, low discipline, poor memory, and mental fog. If you are already performing well, this blueprint will push you to a new ceiling.'},
+  {q:'Is this just another motivation book?',a:'No. Motivation content tells you what to do and why you should feel good doing it. This blueprint explains the neuroscience of why your brain resists what you want — and gives you a precise behavioral protocol to fix the underlying neurochemistry. Results are earned through action, not inspiration.'},
+  {q:'I have tried many things before. Why would this work?',a:'Most productivity systems fail because they treat the symptoms — procrastination, distraction, poor focus — without addressing the cause: neurochemistry. This blueprint goes to the root: dopamine architecture, sleep physiology, BDNF production, and cortisol management. When you fix the neuroscience, the behavior changes follow.'},
+  {q:'How long before I notice results?',a:'Most people notice a shift in focus and motivation within 7–14 days of beginning Week 2. Full results compound over 30 days. Expect the first two weeks to feel harder before they feel better — that discomfort is biological withdrawal, and it is proof the protocol is working.'},
+  {q:'What format does the product come in?',a:'You receive two files: a premium 55-page PDF ebook and a standalone interactive HTML file. Both download instantly after payment. The HTML file opens in any browser — no internet connection required after download.'},
+  {q:'Do I need any science background?',a:'None at all. The neuroscience is translated into plain, direct language written specifically for entrepreneurs. Every concept is explained with practical implications, not laboratory jargon.'},
+  {q:'Is there a refund policy?',a:'Please review the refund policy on the Selar purchase page before completing your order. Digital products are typically non-refundable once downloaded.'},
+  {q:'Can I share this after I buy it?',a:'The product is licensed for personal use. If someone you know would benefit, the most impactful thing — for both of you — is for them to purchase their own copy and work through the protocol actively.'},
+];
+const fl=document.getElementById('faqList');
+faqs.forEach((f,i)=>{
+  fl.innerHTML+=`<div class="faq-item" id="faq${i}">
+    <button class="faq-q" onclick="toggleFaq(${i})">
+      <span class="faq-q-text">${f.q}</span><span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">${f.a}</div>
+  </div>`;
+});
+function toggleFaq(i){
+  const el=document.getElementById('faq'+i);
+  const was=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
+  if(!was)el.classList.add('open');
+}
+
+/* SCROLL REVEAL + DOPAMINE BARS */
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      if(e.target.id==='dopChart'){
+        setTimeout(()=>{
+          document.querySelectorAll('.dop-fill').forEach(b=>{b.style.width=b.getAttribute('data-w')+'%';});
+        },200);
+      }
+    }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal,#dopChart').forEach(el=>obs.observe(el));
+</script>
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║          HOW TO ADD YOUR SELAR LINK — VS CODE STEP-BY-STEP GUIDE           ║
+║                                                                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  STEP 1 — GET YOUR SELAR PRODUCT LINK                                       ║
+║  ─────────────────────────────────────                                       ║
+║  1. Log in to your Selar dashboard at selar.co                              ║
+║  2. Go to Products → click on your Sharp Mind Blueprint product             ║
+║  3. Copy the product URL from your browser address bar                      ║
+║     It will look like:  https://selar.co/yourlinkname                      ║
+║                                                                              ║
+║  STEP 2 — OPEN THIS FILE IN VS CODE                                         ║
+║  ──────────────────────────────────                                          ║
+║  Open VS Code → File → Open File → select this HTML file                   ║
+║                                                                              ║
+║  STEP 3 — OPEN FIND & REPLACE                                               ║
+║  ────────────────────────────                                                ║
+║  Press:  Ctrl + H   on Windows or Linux                                     ║
+║          Cmd  + H   on Mac                                                   ║
+║                                                                              ║
+║  STEP 4 — IN THE FIND BOX, TYPE EXACTLY:                                    ║
+║  ────────────────────────────────────────                                    ║
+║  #SELAR_LINK_HERE                                                            ║
+║                                                                              ║
+║  STEP 5 — IN THE REPLACE BOX, PASTE YOUR SELAR LINK. EXAMPLE:              ║
+║  ─────────────────────────────────────────────────────────────               ║
+║  https://selar.co/sharpmindblueprint                                        ║
+║                                                                              ║
+║  STEP 6 — CLICK "REPLACE ALL"                                               ║
+║  ────────────────────────────                                                ║
+║  Click the Replace All icon (two-arrow icon next to Replace box)            ║
+║  OR press:  Ctrl + Alt + Enter   (Windows/Linux)                            ║
+║             Cmd  + Opt + Enter   (Mac)                                      ║
+║                                                                              ║
+║  You should see "5 replacements made" — one for each button on the page.   ║
+║                                                                              ║
+║  STEP 7 — UPDATE THE PRICE (OPTIONAL)                                       ║
+║  ─────────────────────────────────────                                       ║
+║  Search for:   10,000                                                        ║
+║  Replace with: your actual price e.g.  7,500  or  15,000                   ║
+║                                                                              ║
+║  STEP 8 — SAVE THE FILE                                                     ║
+║  ─────────────────────                                                       ║
+║  Ctrl + S  (Windows/Linux)   or   Cmd + S  (Mac)                           ║
+║                                                                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  STEP 9 — PUT THE PAGE LIVE (FREE OPTIONS)                                  ║
+║                                                                              ║
+║  OPTION A — NETLIFY DROP  (Easiest — zero setup, 2 minutes)                ║
+║  ───────────────────────────────────────────────────────────                 ║
+║  1. Go to:  https://app.netlify.com/drop                                    ║
+║  2. Drag and drop this HTML file into the browser window                    ║
+║  3. Netlify gives you a free live URL instantly                             ║
+║     e.g.  shiny-croissant-abc123.netlify.app                               ║
+║  4. Click "Site settings" to rename it:                                     ║
+║     e.g.  sharpmindblueprint.netlify.app                                   ║
+║                                                                              ║
+║  OPTION B — GITHUB PAGES  (Free, more professional URL)                    ║
+║  ──────────────────────────────────────────────────────                      ║
+║  1. Create a free account at github.com                                     ║
+║  2. Create a new repository — name it:  sharpmindblueprint                 ║
+║  3. Upload this file, rename it to:  index.html                            ║
+║  4. Go to Settings → Pages → Source: main branch                           ║
+║  5. Your URL becomes:  yourusername.github.io/sharpmindblueprint           ║
+║                                                                              ║
+║  OPTION C — CUSTOM DOMAIN  (e.g. sharpmindblueprint.com)                  ║
+║  ─────────────────────────────────────────────────────────                   ║
+║  1. Buy a domain from Namecheap.com (~$10–$15/year)                        ║
+║  2. Deploy using Option A or B above                                        ║
+║  3. Follow the DNS setup instructions in your Netlify/GitHub dashboard     ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+</body>
+</html>
